@@ -50,6 +50,12 @@ class ViewController: UIViewController {
     }
 
     scene.image = image
+    
+    guard let ciImage = CIImage(image: image) else {
+      fatalError("couldn't convert UIImage to CIImage")
+    }
+    
+    detectScene(image: ciImage)
   }
 }
 
@@ -113,6 +119,12 @@ extension ViewController: UIImagePickerControllerDelegate {
     }
 
     scene.image = image
+    
+    guard let ciImage = CIImage(image: image) else {
+      fatalError("couldn't convert UIImage to CIImage")
+    }
+    
+    detectScene(image: ciImage)
   }
 }
 
